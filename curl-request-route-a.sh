@@ -1,7 +1,9 @@
 #!/bin/sh
 
-export ROUTE_A_ACCESS_TOKEN=eyJhbGciOiJSUzI1NiIsImtpZCI6IjMxNjEiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE3NjQ5NjQ2NzIsImlzcyI6InNvbG8uaW8iLCJvcmciOiJzb2xvLmlvIiwicm91dGUiOiJhIiwic3ViIjoiYWxpY2UiLCJ0ZWFtIjoiZGV2In0.TRM6W3GxmN41hrhfZOtuoXgv6Of0bm7pdRKkB5ST7Gn0ivPlQmw3wJCa-0dye_6YXgsm8hS0n64KM6tlN_s4S4gdgQ06w05nBKjd3PWFW9MYfC6StBGgdUDmY2tSQa4xmgsAlD1GrJrG-R_IQhmronaKPtPK1f4gugRBbSTbk_eWQM3vsCBDsPRCjP2lhTOzFtZj-buXdWq6l8akDNoofVB04_eWoJHX8ATIGsLAOnBG_umh4SxlJZTH-ssXnOQaxG683pQfDXZOdt9gg5nnfI1ZoRTzIFqOE-Vs6qslJMS96_iXomqYXLrhrLAgzZKUoersTReKzm0p4s549UBr1w
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+TOKEN_SCRIPT="$SCRIPT_DIR/install/certs/route-a-accesstoken.sh"
+
+ROUTE_A_ACCESS_TOKEN=$(sh "$TOKEN_SCRIPT")
 
 curl -v -H "Authorization: Bearer $ROUTE_A_ACCESS_TOKEN" http://api.example.com/get
-
 
