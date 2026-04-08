@@ -30,6 +30,6 @@ printf "\nDeploy HTTPRoute ...\n"
 kubectl apply -f routes/api-example-com-httproute.yaml
 
 # GlooTrafficPolicy
-kubectl apply -f policies/gloojwt-glootrafficpolicy.yaml
+kubectl apply -f policies/jwt-ektp.yaml
 
 popd

@@ -4,12 +4,12 @@ metadata:
   name: gw
   namespace: ingress-gw
 spec:
-  gatewayClassName: gloo-gateway-v2
+  gatewayClassName: enterprise-kgateway
   infrastructure:
     parametersRef:
       name: custom-gw-params
-      group: gloo.solo.io
-      kind: GlooGatewayParameters   
+      group: enterprisekgateway.solo.io
+      kind: EnterpriseKgatewayParameters   
   listeners:
     - protocol: HTTP
       port: 80
@@ -22,5 +22,3 @@ spec:
           selector:
             matchLabels:
               shared-gateway-access: "true"
-        # Define which kinds of routes we accept
-        # kinds:
